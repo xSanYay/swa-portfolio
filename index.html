@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            background: #2d2346; /* Set background color to match punch area */
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .gif, .last-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out; /* Smooth transition */
+        }
+        .last-frame {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <img class="gif" src="opening_better.gif" alt="One Punch Man Punching Towards the Screen">
+    <video class="video" src="name_clip.mp4" muted style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; opacity: 0;"></video>
+    <div class="message" style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: black; color: white; font-size: 12px; text-align: center; padding-top: 90vh;">more ai slop soon</div>
+    <script>
+        const gif = document.querySelector('.gif');
+        const video = document.querySelector('.video');
+        const message = document.querySelector('.message');
+        gif.addEventListener('load', function() {
+            setTimeout(() => {
+                gif.style.opacity = '0';
+                video.style.opacity = '1';
+                video.play();
+            }, 1900); // GIF length in ms
+        });
+        video.addEventListener('ended', function() {
+            video.style.opacity = '0';
+            message.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

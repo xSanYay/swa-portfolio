@@ -35,8 +35,6 @@
     <img class="gif" src="opening_better.gif" alt="One Punch Man Punching Towards the Screen">
     <video class="video" src="name_clip.mp4" muted style="position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; opacity: 0;"></video>
     <div class="message" style="display: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: black; color: white; font-size: 12px; text-align: center; padding-top: 90vh;">more ai slop soon</div>
-    <!-- place where counter shows -->
-    <div style="position: absolute; bottom: 10px; left: 10px; color: white; font-size: 12px;"><span id="visits">0</span></div>
     <script>
         const gif = document.querySelector('.gif');
         const video = document.querySelector('.video');
@@ -52,25 +50,6 @@
             video.style.opacity = '0';
             message.style.display = 'block';
         });
-    </script>
-    <script>
-        // choose a unique namespace/key — use your domain or repo name
-        const namespace = 'sunyay-art';
-        const key = 'homepage';
-
-        // CountAPI hit endpoint increments and returns JSON { value: <count>, ... }
-        const url = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
-
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                // data.value is the counter
-                document.getElementById('visits').textContent = data.value ?? '0';
-            })
-            .catch(err => {
-                console.error('Count fetch failed', err);
-                document.getElementById('visits').textContent = '—';
-            });
     </script>
 </body>
 </html>

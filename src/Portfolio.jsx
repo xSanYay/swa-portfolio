@@ -28,7 +28,7 @@ const Portfolio = () => {
       <div className="min-h-screen bg-black text-green-500 font-mono flex items-center justify-center p-4">
         <div className="w-full max-w-lg">
           <div className="mb-2 border-b border-green-900 pb-2 flex justify-between">
-            <span>SANJAY_OS_KERNEL</span>
+            <span>SANJAY_Distro</span>
             <span>v2025.1.0</span>
           </div>
           <div className="space-y-1 text-sm">

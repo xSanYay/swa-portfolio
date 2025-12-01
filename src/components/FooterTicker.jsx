@@ -5,19 +5,19 @@ const FooterTicker = () => {
   const [visitorCount, setVisitorCount] = useState('...');
 
   useEffect(() => {
-    // Using hits.seeyoufarm.com - reliable free counter for sunyay.art
-    fetch('https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsunyay.art&count_bg=%2310B981&title_bg=%23555555&icon=&emoji_on=false&title=visits')
-      .then(() => {
-        // Fetch the actual count
-        fetch('https://hits.seeyoufarm.com/api/count/graph/dailyhits.json?url=https%3A%2F%2Fsunyay.art')
-          .then(res => res.json())
-          .then(data => {
-            const total = data.total || 'N/A';
-            setVisitorCount(total);
-          })
-          .catch(() => setVisitorCount('N/A'));
+    // Using counterapi.dev for sunyay.art (hosted on GitHub Pages)
+    fetch('https://api.counterapi.dev/v1/sunyay-art/visits/up')
+      .then(res => res.json())
+      .then(data => {
+        const count = data.count || '1';
+        setVisitorCount(count);
       })
-      .catch(() => setVisitorCount('N/A'));
+      .catch(() => {
+        // Fallback: just increment locally for demo
+        const localCount = parseInt(localStorage.getItem('local_visits') || '0') + 1;
+        localStorage.setItem('local_visits', localCount.toString());
+        setVisitorCount(localCount);
+      });
   }, []);
 
   return (

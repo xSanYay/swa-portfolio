@@ -7,7 +7,7 @@ const TerminalHome = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const roles = ["Backend Developer", "Finance Bro", "Ctrl. Alt. Create :)", "I am Batman"];
+  const roles = ["Backend Developer", "Finance Bro", "Ctrl. Alt. Create :)", "I am Batman", "Debugging AI Slop"];
   const typingSpeed = 100;
   const deletingSpeed = 50;
   const pauseTime = 2000;
@@ -70,7 +70,7 @@ const TerminalHome = () => {
       <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatsCard label="Backend Uptime" value="99.9%" trend="+0.4%" />
         <StatsCard label="enter" value="GitHub" link="https://github.com/xSanYay" />
-        <StatsCard label="Coffee Intake" value="High" trend="Critical" color="text-red-400" />
+        <StatsCard label="Tea Intake" value="High" trend="Critical" color="text-red-400" />
       </div>
     </div>
   );
